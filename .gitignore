@@ -5,3 +5,4 @@ venv/
 target/
 dbt_packages/
 data/raw/*.csv
+data/processed/*.parquet

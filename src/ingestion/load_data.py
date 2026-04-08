@@ -42,14 +42,3 @@ def validate_data(df: pd.DataFrame):
 
     print("\n Basic validation completed")
 
-
-def main():
-    file_path = "data/raw/Reviews.csv"
-
-    df = load_csv(file_path)
-    print_schema(df)
-    validate_data(df)
-
-
-if __name__ == "__main__":
-    main()
