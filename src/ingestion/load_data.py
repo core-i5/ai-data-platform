@@ -7,7 +7,7 @@ def load_csv(file_path: str) -> pd.DataFrame:
     try:
         df = pd.read_csv(file_path)
         print(f"\n File loaded successfully: {file_path}")
-        return df
+        return df.head(2000)
     except Exception as e:
         print(f"\n Failed to load file: {e}")
         sys.exit(1)
@@ -42,3 +42,8 @@ def validate_data(df: pd.DataFrame):
 
     print("\n Basic validation completed")
 
+def validate(file_path: str) -> pd.DataFrame:
+    df = load_csv(file_path)
+    print_schema(df)
+    validate_data(df)
+    return df

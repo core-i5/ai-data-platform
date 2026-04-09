@@ -117,3 +117,9 @@ def save_parquet(df: pd.DataFrame, output_path: str):
         sys.exit(1)
 
 
+def cleaning(df: pd.DataFrame, output_path: str):
+    df = enforce_schema(df)
+    df = clean_data(df)
+    df = cast_types(df)
+    df = feature_engineering(df)
+    save_parquet(df, output_path)
